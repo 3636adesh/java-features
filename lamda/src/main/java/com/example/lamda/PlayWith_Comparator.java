@@ -1,9 +1,8 @@
-package com.example;
+package com.example.lamda;
 
-import com.example.model.Person;
+import com.example.Person;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
@@ -17,11 +16,11 @@ public class PlayWith_Comparator {
         Person aakash = new Person("Aakash", "Sharma", 24);
         Person pooja = new Person("Pooja", "Sharma", 32);
         Person sunil = new Person("Sunil", "Kichar", 36);
-        Person ashish=new Person("Ashish","Chaudhary",33);
+        Person ashish = new Person("Ashish", "Chaudhary", 33);
 
-        Function<Person,String> firstName = Person::getFirstName;
-        Function<Person,String> lastName = Person::getLastName;
-        Function<Person,Integer> age = Person::getAge;
+        Function<Person, String> firstName = Person::getFirstName;
+        Function<Person, String> lastName = Person::getLastName;
+        Function<Person, Integer> age = Person::getAge;
 
         Comparator<Person> comparator = Comparator.comparing(firstName)
                 .thenComparing(lastName)
@@ -30,7 +29,7 @@ public class PlayWith_Comparator {
         comparator = Comparator.nullsLast(comparator);
 
 
-        List<Person> peoples = Arrays.asList(ravindra, null, aakash,deepak,pooja,sunil,ashish);
+        List<Person> peoples = Arrays.asList(ravindra, null, aakash, deepak, pooja, sunil, ashish);
         peoples.sort(comparator);
 
 
